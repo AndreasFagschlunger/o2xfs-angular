@@ -1,7 +1,9 @@
 import { NgModule }              from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
+import { OperatorComponent } from 'operator';
 
 const appRoutes: Routes = [
+  { path: 'operator', component: OperatorComponent }
 ];
 
 @NgModule({

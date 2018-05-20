@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-operator',
+  selector: 'lib-cdm-status',
   template: `
     <p>
-      operator works!
+      cdm-status works!
     </p>
-    <router-outlet></router-outlet>
   `,
   styles: []
 })
-export class OperatorComponent implements OnInit {
+export class CdmStatusComponent implements OnInit {
 
   constructor() { }
 

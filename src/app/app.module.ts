@@ -3,10 +3,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-
 import { OperatorModule } from 'operator';
-
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [

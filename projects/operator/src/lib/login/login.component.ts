@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-operator',
+  selector: 'lib-login',
   template: `
     <p>
-      operator works!
+      login works!
     </p>
-    <router-outlet></router-outlet>
   `,
   styles: []
 })
-export class OperatorComponent implements OnInit {
+export class LoginComponent implements OnInit {
 
   constructor() { }
 
