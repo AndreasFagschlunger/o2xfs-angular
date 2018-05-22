@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { LogicalService, ServiceClass, XfsService } from 'xfs';
 
 @Component({
-  selector: 'cash-dispenser-list',
-  templateUrl: './cash-dispenser-list.component.html',
-  styleUrls: ['./cash-dispenser-list.component.scss']
+  selector: 'cdm-list',
+  templateUrl: './cdm-list.component.html',
+  styleUrls: ['./cdm-list.component.scss']
 })
-export class CashDispenserListComponent implements OnInit {
+export class CdmListComponent implements OnInit {
 
   cashDispensers: LogicalService[];
 

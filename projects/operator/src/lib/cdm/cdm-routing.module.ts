@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CashDispenserListComponent } from './cash-dispenser-list/cash-dispenser-list.component';
+import { CdmListComponent } from './cdm-list/cdm-list.component';
 import { CdmStatusComponent } from './cdm-status/cdm-status.component';
 import { AuthGuard } from '../auth-guard.service';
 
@@ -10,7 +10,7 @@ const routes: Routes = [
     path: 'operator/cdm',
     children: [
       { path: 'status', component: CdmStatusComponent },
-      { path: '', component: CashDispenserListComponent }
+      { path: '', component: CdmListComponent }
     ]
   }
 ];
@@ -19,4 +19,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CashDispenserRoutingModule { }
+export class CdmRoutingModule { }
