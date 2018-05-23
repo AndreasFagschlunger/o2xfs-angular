@@ -1,9 +1,12 @@
 import { NgModule }              from '@angular/core';
 import { RouterModule, Routes }  from '@angular/router';
-import { OperatorComponent } from 'operator';
 
 const appRoutes: Routes = [
-  { path: '**', redirectTo: '/operator' }
+  {
+    path: 'operator',
+    loadChildren: 'operator/operator.module#OperatorModule'
+  },
+  { path: '', redirectTo: '/operator', pathMatch: 'full' }
 ];
 
 @NgModule({
