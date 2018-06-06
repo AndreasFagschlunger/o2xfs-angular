@@ -24,6 +24,18 @@
       ],
       "operator": [
         "dist/operator"
+      ],
+      "xfs3": [
+        "dist/xfs3"
+      ],
+      "xfs310": [
+        "dist/xfs310"
+      ],
+      "xfs320": [
+        "dist/xfs320"
+      ],
+      "xfs330": [
+        "dist/xfs330"
       ]
     }
   }

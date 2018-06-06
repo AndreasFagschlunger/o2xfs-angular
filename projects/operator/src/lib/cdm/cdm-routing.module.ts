@@ -7,10 +7,10 @@ import { AuthGuard } from '../auth-guard.service';
 
 const routes: Routes = [
   {
-    path: 'operator/cdm',
+    path: '',
     children: [
       { path: 'status', component: CdmStatusComponent },
-      { path: '', component: CdmListComponent }
+      { path: '**', component: CdmListComponent }
     ]
   }
 ];

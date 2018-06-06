@@ -1,0 +1,46 @@
+export enum CdmExecuteCommand {
+
+    DENOMINATE = 301,
+
+    DISPENSE = 302,
+
+    PRESENT = 303,
+
+    REJECT = 304,
+
+    RETRACT = 305,
+
+    OPEN_SHUTTER = 307,
+
+    CLOSE_SHUTTER = 308,
+
+    SET_TELLER_INFO = 309,
+
+    SET_CASH_UNIT_INFO = 310,
+
+    START_EXCHANGE = 311,
+
+    END_EXCHANGE = 312,
+
+    OPEN_SAFE_DOOR = 313,
+
+    CALIBRATE_CASH_UNIT = 315,
+
+    SET_MIX_TABLE = 320,
+
+    RESET = 321,
+
+    TEST_CASH_UNITS = 322,
+
+    COUNT = 323,
+
+    SET_GUIDANCE_LIGHT = 324,
+
+    POWER_SAVE_CONTROL = 325,
+
+    PREPARE_DISPENSE = 326,
+
+    SET_BLACKLIST = 327,
+
+    SYNCHRONIZE_COMMAND = 328
+}

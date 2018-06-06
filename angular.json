@@ -196,6 +196,166 @@
           }
         }
       }
+    },
+    "xfs3": {
+      "root": "projects/xfs3",
+      "sourceRoot": "projects/xfs3/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/xfs3/tsconfig.lib.json",
+            "project": "projects/xfs3/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/xfs3/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/xfs3/src/test.ts",
+            "tsConfig": "projects/xfs3/tsconfig.spec.json",
+            "karmaConfig": "projects/xfs3/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/xfs3/tsconfig.lib.json",
+              "projects/xfs3/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "xfs310": {
+      "root": "projects/xfs310",
+      "sourceRoot": "projects/xfs310/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/xfs310/tsconfig.lib.json",
+            "project": "projects/xfs310/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/xfs310/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/xfs310/src/test.ts",
+            "tsConfig": "projects/xfs310/tsconfig.spec.json",
+            "karmaConfig": "projects/xfs310/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/xfs310/tsconfig.lib.json",
+              "projects/xfs310/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "xfs320": {
+      "root": "projects/xfs320",
+      "sourceRoot": "projects/xfs320/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/xfs320/tsconfig.lib.json",
+            "project": "projects/xfs320/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/xfs320/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/xfs320/src/test.ts",
+            "tsConfig": "projects/xfs320/tsconfig.spec.json",
+            "karmaConfig": "projects/xfs320/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/xfs320/tsconfig.lib.json",
+              "projects/xfs320/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "xfs330": {
+      "root": "projects/xfs330",
+      "sourceRoot": "projects/xfs330/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/xfs330/tsconfig.lib.json",
+            "project": "projects/xfs330/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/xfs330/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/xfs330/src/test.ts",
+            "tsConfig": "projects/xfs330/tsconfig.spec.json",
+            "karmaConfig": "projects/xfs330/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/xfs330/tsconfig.lib.json",
+              "projects/xfs330/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "o2xfs-angular"
