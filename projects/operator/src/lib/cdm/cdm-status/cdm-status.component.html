@@ -5,11 +5,57 @@
             <table>
                 <tr>
                     <td>Device</td>
-                    <td>{{status.device}}</td>
+                    <td>{{status.deviceState}}</td>
                 </tr>
                 <tr>
                     <td>Safe door</td>
                     <td>{{status.safeDoor}}</td>
+                </tr>
+                <tr>
+                    <td>Dispenser</td>
+                    <td>{{status.dispenser}}</td>
+                </tr>
+                <tr>
+                    <td>Intermediate Stacker</td>
+                    <td>{{status.intermediateStacker}}</td>
+                </tr>
+                <tr *ngFor="let each of status.positions">
+                    <td>Position</td>
+                    <td>
+                        {{each.position}},
+                        <br /> {{each.shutter}},
+                        <br /> {{each.positionStatus}},
+                        <br /> {{each.transport}},
+                        <br /> {{each.transportStatus}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Extra</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr *ngFor="let key of extraKeys()">
+                    <td>{{key}}</td>
+                    <td>{{status.extra[key]}}</td>
+                </tr>
+                <tr *ngFor="let each of status.guidLights">
+                    <td>Position</td>
+                    <td>
+                        <span *ngFor="let guidLight of each">
+                            {{guidLight}}
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DevicePosition</td>
+                    <td>{{status.devicePosition}}</td>
+                </tr>
+                <tr>
+                    <td>PowerSaveRecoveryTime</td>
+                    <td>{{status.powerSaveRecoveryTime}}</td>
+                </tr>
+                <tr>
+                    <td>AntiFraudModule</td>
+                    <td>{{status.antiFraudModule}}</td>
                 </tr>
             </table>
         </div>
