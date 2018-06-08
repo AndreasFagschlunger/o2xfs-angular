@@ -1,5 +1,9 @@
 # O2xfsAngular
 
+## Code Status
+
+[![Build Status](https://travis-ci.com/AndreasFagschlunger/o2xfs-angular.svg?branch=develop)](https://travis-ci.org/AndreasFagschlunger/o2xfs-angular/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
 ## Development server
