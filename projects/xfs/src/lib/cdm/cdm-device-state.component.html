@@ -1,0 +1,11 @@
+<ng-container ngSwitch="{{value}}">
+    <span *ngSwitchCase="0" di18n="@@WFS_STAT_DEVONLINE">Online</span>
+    <span *ngSwitchCase="1" di18n="@@WFS_STAT_DEVOFFLINE">Offline</span>
+    <span *ngSwitchCase="2" di18n="@@WFS_STAT_DEVPOWEROFF">Poweroff</span>
+    <span *ngSwitchCase="3" di18n="@@WFS_STAT_DEVNODEVICE">No device</span>
+    <span *ngSwitchCase="4" di18n="@@WFS_STAT_DEVHWERROR">Hardware error</span>
+    <span *ngSwitchCase="5" di18n="@@WFS_STAT_DEVUSERERROR">User error</span>
+    <span *ngSwitchCase="6" di18n="@@WFS_STAT_DEVBUSY">Busy</span>
+    <span *ngSwitchCase="7" di18n="@@WFS_STAT_DEVFRAUDATTEMPT">Fraud attempt</span>
+    <span *ngSwitchCase="8" di18n="@@WFS_STAT_DEVPOTENTIALFRAUD">Potential fraud attempt</span>
+</ng-container>

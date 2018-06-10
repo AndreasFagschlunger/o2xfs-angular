@@ -20,7 +20,7 @@
     align-items: center;
 }
 
-.xfs-error {
+.xfs-error {    
     background-color: $danger;
 }
 
@@ -29,5 +29,6 @@
 }
 
 .xfs-success {
+    color: #155724;
     background-color: $success;
 }
