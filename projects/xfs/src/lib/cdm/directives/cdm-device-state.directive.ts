@@ -1,17 +1,16 @@
 import { Directive, Input, ElementRef, Renderer2, OnInit } from '@angular/core';
-import { CdmDeviceState } from './cdm-device-state.enum';
-import { Level } from '.';
+import { CdmDeviceState } from '../cdm-device-state.enum';
 
 enum Alert {
-  ERROR = 'xfs-error',
-  WARNING = 'xfs-warning',
-  SUCCESS = 'xfs-success',
+  ERROR = 'alert-danger',
+  WARNING = 'alert-warning',
+  SUCCESS = 'alert-success',
 }
 
 @Directive({
   selector: '[cdmDeviceState]'
 })
-export class DeviceStateDirective implements OnInit {
+export class CdmDeviceStateDirective implements OnInit {
 
   @Input('cdmDeviceState')
   deviceState: CdmDeviceState;
@@ -19,6 +18,7 @@ export class DeviceStateDirective implements OnInit {
   constructor(private el: ElementRef, private _renderer: Renderer2) { }
 
   ngOnInit(): void {
+    console.log(this.deviceState + ",typeof=" + (typeof this.deviceState))
     switch (this.deviceState) {
       case CdmDeviceState.ONLINE:
         this.toggleAlert(Alert.SUCCESS);
@@ -39,9 +39,9 @@ export class DeviceStateDirective implements OnInit {
   private toggleAlert(value: Alert) {
     for(let each of Object.keys(Alert)) {
       if(Alert[each] === value) {
-        this._renderer.addClass(this.el.nativeElement, value);
+        this.el.nativeElement.classList.add(value);
       } else {
-        this._renderer.removeClass(this.el.nativeElement, value);
+        this.el.nativeElement.classList.remove(Alert[each]);
       }
     }
   }

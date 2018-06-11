@@ -1,4 +1,4 @@
-<ng-container ngSwitch="{{value}}">
+<div ngSwitch="{{value}}" [cdmDeviceState]="value">
     <span *ngSwitchCase="0" di18n="@@WFS_STAT_DEVONLINE">Online</span>
     <span *ngSwitchCase="1" di18n="@@WFS_STAT_DEVOFFLINE">Offline</span>
     <span *ngSwitchCase="2" di18n="@@WFS_STAT_DEVPOWEROFF">Poweroff</span>
@@ -8,4 +8,4 @@
     <span *ngSwitchCase="6" di18n="@@WFS_STAT_DEVBUSY">Busy</span>
     <span *ngSwitchCase="7" di18n="@@WFS_STAT_DEVFRAUDATTEMPT">Fraud attempt</span>
     <span *ngSwitchCase="8" di18n="@@WFS_STAT_DEVPOTENTIALFRAUD">Potential fraud attempt</span>
-</ng-container>
+</div>
