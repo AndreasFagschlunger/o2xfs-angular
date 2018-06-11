@@ -5,12 +5,9 @@ import { CdmDeviceState } from '.';
   selector: 'cdmDeviceState',
   templateUrl: './cdm-device-state.component.html'
 })
-export class CdmDeviceStateComponent implements OnInit {
+export class CdmDeviceStateComponent {
 
   @Input()
   value: CdmDeviceState;
 
-  ngOnInit(): void {
-    console.log('ngOnInit: value=' + this.value + ',typeof=' + (typeof this.value));
-  }
 }

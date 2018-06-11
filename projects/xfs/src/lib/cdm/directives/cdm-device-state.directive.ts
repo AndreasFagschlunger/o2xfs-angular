@@ -15,10 +15,9 @@ export class CdmDeviceStateDirective implements OnInit {
   @Input('cdmDeviceState')
   deviceState: CdmDeviceState;
 
-  constructor(private el: ElementRef, private _renderer: Renderer2) { }
+  constructor(private el: ElementRef) { }
 
   ngOnInit(): void {
-    console.log(this.deviceState + ",typeof=" + (typeof this.deviceState))
     switch (this.deviceState) {
       case CdmDeviceState.ONLINE:
         this.toggleAlert(Alert.SUCCESS);
