@@ -16,7 +16,7 @@ export class CdmStatusComponent implements OnInit {
 
   ngOnInit() {
     this.status = {
-      deviceState: CdmDeviceState.ONLINE,
+      deviceState: CdmDeviceState.OFFLINE,
       safeDoor: SafeDoor.CLOSED,
       dispenser: Dispenser.OK,
       intermediateStacker: IntermediateStacker.EMPTY,
@@ -40,6 +40,13 @@ export class CdmStatusComponent implements OnInit {
       powerSaveRecoveryTime: 2000,
       antiFraudModule: AntiFraudModule.OK
     };
+    window.setInterval(() => {
+      if(this.status.deviceState === CdmDeviceState.ONLINE) {
+        this.status.deviceState = CdmDeviceState.OFFLINE;
+      } else {
+        this.status.deviceState = CdmDeviceState.ONLINE;
+      }
+    }, 2000);
   }
 
   extraKeys(): string[] {

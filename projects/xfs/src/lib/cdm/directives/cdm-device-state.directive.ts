@@ -1,47 +1,38 @@
-import { Directive, Input, ElementRef, Renderer2, OnInit } from '@angular/core';
+import { Directive, Input, ElementRef, OnInit, HostBinding, OnChanges, SimpleChanges } from '@angular/core';
 import { CdmDeviceState } from '../cdm-device-state.enum';
-
-enum Alert {
-  ERROR = 'alert-danger',
-  WARNING = 'alert-warning',
-  SUCCESS = 'alert-success',
-}
+import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
+import { Outcome } from '../../directives/outcome.enum';
+import { DeviceStateDirective } from 'dist/xfs/lib/cdm/device-state.directive';
 
 @Directive({
   selector: '[cdmDeviceState]'
 })
-export class CdmDeviceStateDirective implements OnInit {
+export class CdmDeviceStateDirective extends AbstractOutcomeDirective {
 
   @Input('cdmDeviceState')
   deviceState: CdmDeviceState;
 
-  constructor(private el: ElementRef) { }
+  constructor(el: ElementRef) {
+    super(el);
+  }
 
-  ngOnInit(): void {
+  getOutcome(): Outcome {
+    let result: Outcome;
     switch (this.deviceState) {
       case CdmDeviceState.ONLINE:
-        this.toggleAlert(Alert.SUCCESS);
+        result = Outcome.SUCCESS;
       break;
       case CdmDeviceState.OFFLINE:
       case CdmDeviceState.POWEROFF:
       case CdmDeviceState.NODEVICE:
       case CdmDeviceState.HWERROR:
       case CdmDeviceState.FRAUDATTEMPT:
-      this.toggleAlert(Alert.ERROR);
+      result = Outcome.ERROR;
       break;
       default:
-      this.toggleAlert(Alert.WARNING);
+      result = Outcome.WARNING;
       break;
     }
-  }
-
-  private toggleAlert(value: Alert) {
-    for(let each of Object.keys(Alert)) {
-      if(Alert[each] === value) {
-        this.el.nativeElement.classList.add(value);
-      } else {
-        this.el.nativeElement.classList.remove(Alert[each]);
-      }
-    }
+    return result;
   }
 }
