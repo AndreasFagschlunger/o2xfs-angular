@@ -1,3 +1,5 @@
+import { XfsCdmModule } from './cdm.module';
+
 export {AntiFraudModule} from './anti-fraud-module.enum';
 export {CashUnitStatus} from './cash-unit-status.enum';
 export {CashUnitType} from './cash-unit-type.enum';
@@ -29,3 +31,4 @@ export {Shutter} from './shutter.enum';
 export {TellerUpdateAction} from './teller-update-action.enum';
 export {Transport} from './transport.enum';
 export {TransportStatus} from './transport-status.enum';
+export {XfsCdmModule} from './cdm.module';

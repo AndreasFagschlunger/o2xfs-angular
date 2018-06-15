@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { CdmDeviceState } from '.';
+import { CdmDeviceState } from '../cdm-device-state.enum';
 
 @Component({
   selector: 'cdmDeviceState',
-  templateUrl: './cdm-device-state.component.html'
+  templateUrl: './device-state.component.html'
 })
 export class CdmDeviceStateComponent {
 

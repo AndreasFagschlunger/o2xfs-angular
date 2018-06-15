@@ -2,7 +2,6 @@ import { Directive, Input, ElementRef, OnInit, HostBinding, OnChanges, SimpleCha
 import { CdmDeviceState } from '../cdm-device-state.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
-import { DeviceStateDirective } from 'dist/xfs/lib/cdm/device-state.directive';
 
 @Directive({
   selector: '[cdmDeviceState]'
