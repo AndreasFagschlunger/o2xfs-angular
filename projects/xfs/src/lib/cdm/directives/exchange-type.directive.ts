@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { ExchangeType } from '../exchange-type.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmExchangeType]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmExchangeTypeDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmExchangeType')
+  value: ExchangeType;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,8 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
-        result = Outcome.SUCCESS;
-        break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case ExchangeType.BYHAND:
+      case ExchangeType.TOCASSETTES:
       default:
         result = Outcome.ERROR;
         break;

@@ -1,0 +1,5 @@
+<div ngSwitch="{{value}}" [cdmPresentState]="value">
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_PRESENTED">PRESENTED</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_NOTPRESENTED">NOTPRESENTED</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_UNKNOWN">UNKNOWN</span>
+</div>

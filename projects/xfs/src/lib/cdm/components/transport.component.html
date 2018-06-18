@@ -1,0 +1,6 @@
+<div ngSwitch="{{value}}" [cdmTransport]="value">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_TPOK">OK</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_TPINOP">INOP</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_TPUNKNOWN">UNKNOWN</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_TPNOTSUPPORTED">NOTSUPPORTED</span>
+</div>

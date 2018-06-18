@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { ItemLocation } from '../item-location.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmItemLocation]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmItemLocationDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmItemLocation')
+  value: ItemLocation;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,10 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
-        result = Outcome.SUCCESS;
-        break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case ItemLocation.DEVICE:
+      case ItemLocation.CASHUNIT:
+      case ItemLocation.CUSTOMER:
+      case ItemLocation.UNKNOWN:
       default:
         result = Outcome.ERROR;
         break;

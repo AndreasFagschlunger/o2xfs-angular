@@ -1,0 +1,7 @@
+<div ngSwitch="{{value}}" [cdmAntiFraudModule]="value">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_AFMNOTSUPP">NOTSUPP</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_AFMOK">OK</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_AFMINOP">INOP</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_AFMDEVICEDETECTED">DEVICEDETECTED</span>
+    <span *ngSwitchCase="4" i18n="@@WFS_CDM_AFMUNKNOWN">UNKNOWN</span>
+</div>

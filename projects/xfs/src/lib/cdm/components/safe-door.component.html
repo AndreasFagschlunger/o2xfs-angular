@@ -1,6 +1,6 @@
-<div ngSwitch="{{value}}">
-    <span *ngSwitchCase="1" di18n="@@WFS_CDM_DOORNOTSUPPORTED">Not supported</span>
-    <span *ngSwitchCase="2" di18n="@@WFS_CDM_DOOROPEN">Open</span>
-    <span *ngSwitchCase="3" di18n="@@WFS_CDM_DOORCLOSED">Closed</span>
-    <span *ngSwitchCase="5" di18n="@@WFS_CDM_DOORUNKNOWN">Unknown</span>
+<div ngSwitch="{{value}}" [cdmSafeDoor]="value">
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_DOORNOTSUPPORTED">NOTSUPPORTED</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_DOOROPEN">OPEN</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_DOORCLOSED">CLOSED</span>
+    <span *ngSwitchCase="5" i18n="@@WFS_CDM_DOORUNKNOWN">UNKNOWN</span>
 </div>

@@ -1,0 +1,8 @@
+<div ngSwitch="{{value}}" [cdmIntermediateStacker]="value">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_ISEMPTY">EMPTY</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_ISNOTEMPTY">NOTEMPTY</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_ISNOTEMPTYCUST">NOTEMPTYCUST</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_ISNOTEMPTYUNK">NOTEMPTYUNK</span>
+    <span *ngSwitchCase="4" i18n="@@WFS_CDM_ISUNKNOWN">UNKNOWN</span>
+    <span *ngSwitchCase="5" i18n="@@WFS_CDM_ISNOTSUPPORTED">NOTSUPPORTED</span>
+</div>

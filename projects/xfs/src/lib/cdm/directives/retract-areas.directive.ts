@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { RetractAreas } from '../retract-areas.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmRetractAreas]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmRetractAreasDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmRetractAreas')
+  value: RetractAreas;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,12 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
-        result = Outcome.SUCCESS;
-        break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case RetractAreas.RETRACT:
+      case RetractAreas.TRANSPORT:
+      case RetractAreas.STACKER:
+      case RetractAreas.REJECT:
+      case RetractAreas.NOTSUPP:
+      case RetractAreas.ITEMCASSETTE:
       default:
         result = Outcome.ERROR;
         break;

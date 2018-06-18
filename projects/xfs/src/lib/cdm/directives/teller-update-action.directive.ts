@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { TellerUpdateAction } from '../teller-update-action.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmTellerUpdateAction]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmTellerUpdateActionDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmTellerUpdateAction')
+  value: TellerUpdateAction;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,9 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
-        result = Outcome.SUCCESS;
-        break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case TellerUpdateAction.CREATE_TELLER:
+      case TellerUpdateAction.MODIFY_TELLER:
+      case TellerUpdateAction.DELETE_TELLER:
       default:
         result = Outcome.ERROR;
         break;

@@ -1,0 +1,7 @@
+<div ngSwitch="{{value}}" [cdmRetractStackerActions]="value">
+    <span *ngSwitchCase="0x0001" i18n="@@WFS_CDM_PRESENT">PRESENT</span>
+    <span *ngSwitchCase="0x0002" i18n="@@WFS_CDM_RETRACT">RETRACT</span>
+    <span *ngSwitchCase="0x0004" i18n="@@WFS_CDM_REJECT">REJECT</span>
+    <span *ngSwitchCase="0x0008" i18n="@@WFS_CDM_NOTSUPP">NOTSUPP</span>
+    <span *ngSwitchCase="0x0010" i18n="@@WFS_CDM_ITEMCASSETTE">ITEMCASSETTE</span>
+</div>

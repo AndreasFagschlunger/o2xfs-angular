@@ -1,0 +1,7 @@
+<div ngSwitch="{{value}}" [cdmShutter]="value">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_SHTCLOSED">CLOSED</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_SHTOPEN">OPEN</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_SHTJAMMED">JAMMED</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_SHTUNKNOWN">UNKNOWN</span>
+    <span *ngSwitchCase="4" i18n="@@WFS_CDM_SHTNOTSUPPORTED">NOTSUPPORTED</span>
+</div>

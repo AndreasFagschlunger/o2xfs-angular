@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { Failure } from '../failure.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmFailure]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmFailureDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmFailure')
+  value: Failure;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,13 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
-        result = Outcome.SUCCESS;
-        break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case Failure.EMPTY:
+      case Failure.ERROR:
+      case Failure.FULL:
+      case Failure.LOCKED:
+      case Failure.INVALID:
+      case Failure.CONFIG:
+      case Failure.NOTCONF:
       default:
         result = Outcome.ERROR;
         break;

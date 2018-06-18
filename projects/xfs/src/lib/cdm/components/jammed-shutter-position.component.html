@@ -1,0 +1,8 @@
+<div ngSwitch="{{value}}" [cdmJammedShutterPosition]="value">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_SHUTTERPOS_NOTSUPPORTED">NOTSUPPORTED</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_SHUTTERPOS_NOTJAMMED">NOTJAMMED</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_SHUTTERPOS_OPEN">OPEN</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_SHUTTERPOS_PARTIALLY_OPEN">PARTIALLY_OPEN</span>
+    <span *ngSwitchCase="4" i18n="@@WFS_CDM_SHUTTERPOS_CLOSED">CLOSED</span>
+    <span *ngSwitchCase="5" i18n="@@WFS_CDM_SHUTTERPOS_UNKNOWN">UNKNOWN</span>
+</div>

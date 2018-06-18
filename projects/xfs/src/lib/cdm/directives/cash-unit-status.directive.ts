@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { CashUnitStatus } from '../cash-unit-status.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmCashUnitStatus]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmCashUnitStatusDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmCashUnitStatus')
+  value: CashUnitStatus;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,20 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
+      case CashUnitStatus.OK:
         result = Outcome.SUCCESS;
         break;
-      case Dispenser.CUSTATE:
+      case CashUnitStatus.HIGH:
+      case CashUnitStatus.LOW:
         result = Outcome.WARNING;
         break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case CashUnitStatus.FULL:
+      case CashUnitStatus.EMPTY:
+      case CashUnitStatus.INOP:
+      case CashUnitStatus.MISSING:
+      case CashUnitStatus.NOVAL:
+      case CashUnitStatus.NOREF:
+      case CashUnitStatus.MANIP:
       default:
         result = Outcome.ERROR;
         break;

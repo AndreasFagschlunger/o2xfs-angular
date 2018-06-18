@@ -1,0 +1,7 @@
+export enum MixSubType {
+
+    MINIMUM_NUMBER_OF_BILLS = 1,
+    EQUAL_EMPTYING_OF_CASH_UNITS = 2,
+    MAXIMUM_NUMBER_OF_CASH_UNITS = 3,
+
+}

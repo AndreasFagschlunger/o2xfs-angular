@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { Shutter } from '../shutter.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmShutter]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmShutterDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmShutter')
+  value: Shutter;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,13 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
+      case Shutter.CLOSED:
         result = Outcome.SUCCESS;
         break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case Shutter.OPEN:
+      case Shutter.JAMMED:
+      case Shutter.UNKNOWN:
+      case Shutter.NOTSUPPORTED:
       default:
         result = Outcome.ERROR;
         break;

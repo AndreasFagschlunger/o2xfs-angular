@@ -1,0 +1,11 @@
+export enum NoteErrorReason {
+
+    DOUBLENOTEDETECTED = 1,
+    LONGNOTEDETECTED = 2,
+    SKEWEDNOTE = 3,
+    INCORRECTCOUNT = 4,
+    NOTESTOOCLOSE = 5,
+    OTHERNOTEERROR = 6,
+    SHORTNOTEDETECTED = 7,
+
+}

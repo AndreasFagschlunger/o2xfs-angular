@@ -1,6 +1,6 @@
 <div ngSwitch="{{value}}" [cdmDispenser]="value">
-    <span *ngSwitchCase="0" di18n="@@WFS_CDM_DISPOK">All cash units present are in a good state.</span>
-    <span *ngSwitchCase="1" di18n="@@WFS_CDM_DISPCUSTATE">One or more of the cash units is in a low, empty, inoperative or manipulated condition.</span>
-    <span *ngSwitchCase="2" di18n="@@WFS_CDM_DISPCUSTOP">Due to a cash unit failure dispensing is impossible.</span>
-    <span *ngSwitchCase="3" di18n="@@WFS_CDM_DISPCUUNKNOWN">Due to a hardware error or other condition, the state of the cash units cannot be determined.</span>
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_DISPOK">OK</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_DISPCUSTATE">CUSTATE</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_DISPCUSTOP">CUSTOP</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_DISPCUUNKNOWN">CUUNKNOWN</span>
 </div>

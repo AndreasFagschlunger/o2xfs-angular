@@ -1,0 +1,9 @@
+<div ngSwitch="{{value}}" [cdmFailure]="value">
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_CASHUNITEMPTY">EMPTY</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_CASHUNITERROR">ERROR</span>
+    <span *ngSwitchCase="4" i18n="@@WFS_CDM_CASHUNITFULL">FULL</span>
+    <span *ngSwitchCase="5" i18n="@@WFS_CDM_CASHUNITLOCKED">LOCKED</span>
+    <span *ngSwitchCase="6" i18n="@@WFS_CDM_CASHUNITINVALID">INVALID</span>
+    <span *ngSwitchCase="7" i18n="@@WFS_CDM_CASHUNITCONFIG">CONFIG</span>
+    <span *ngSwitchCase="8" i18n="@@WFS_CDM_CASHUNITNOTCONF">NOTCONF</span>
+</div>

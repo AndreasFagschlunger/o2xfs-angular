@@ -1,0 +1,9 @@
+<div ngSwitch="{{value}}" [cdmInputPosition]="value">
+    <span *ngSwitchCase="0x0001" i18n="@@WFS_CDM_POSINLEFT">LEFT</span>
+    <span *ngSwitchCase="0x0002" i18n="@@WFS_CDM_POSINRIGHT">RIGHT</span>
+    <span *ngSwitchCase="0x0004" i18n="@@WFS_CDM_POSINCENTER">CENTER</span>
+    <span *ngSwitchCase="0x0008" i18n="@@WFS_CDM_POSINTOP">TOP</span>
+    <span *ngSwitchCase="0x0010" i18n="@@WFS_CDM_POSINBOTTOM">BOTTOM</span>
+    <span *ngSwitchCase="0x0020" i18n="@@WFS_CDM_POSINFRONT">FRONT</span>
+    <span *ngSwitchCase="0x0040" i18n="@@WFS_CDM_POSINREAR">REAR</span>
+</div>

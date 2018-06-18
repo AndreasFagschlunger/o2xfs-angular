@@ -1,0 +1,7 @@
+<div ngSwitch="{{value}}" [cdmTransportStatus]="value">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_TPSTATEMPTY">EMPTY</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_TPSTATNOTEMPTY">NOTEMPTY</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_TPSTATNOTEMPTYCUST">NOTEMPTYCUST</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_TPSTATNOTEMPTY_UNK">NOTEMPTY_UNK</span>
+    <span *ngSwitchCase="4" i18n="@@WFS_CDM_TPSTATNOTSUPPORTED">NOTSUPPORTED</span>
+</div>

@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { OnBlacklist } from '../on-blacklist.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmOnBlacklist]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmOnBlacklistDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmOnBlacklist')
+  value: OnBlacklist;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,9 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
-        result = Outcome.SUCCESS;
-        break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case OnBlacklist.ONBLACKLIST:
+      case OnBlacklist.NOTONBLACKLIST:
+      case OnBlacklist.BLACKLISTUNKNOWN:
       default:
         result = Outcome.ERROR;
         break;

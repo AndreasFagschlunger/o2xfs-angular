@@ -1,0 +1,8 @@
+<div ngSwitch="{{value}}" [cdmRetractArea]="value">
+    <span *ngSwitchCase="0x0001" i18n="@@WFS_CDM_RA_RETRACT">RETRACT</span>
+    <span *ngSwitchCase="0x0002" i18n="@@WFS_CDM_RA_TRANSPORT">TRANSPORT</span>
+    <span *ngSwitchCase="0x0004" i18n="@@WFS_CDM_RA_STACKER">STACKER</span>
+    <span *ngSwitchCase="0x0008" i18n="@@WFS_CDM_RA_REJECT">REJECT</span>
+    <span *ngSwitchCase="0x0010" i18n="@@WFS_CDM_RA_NOTSUPP">NOTSUPP</span>
+    <span *ngSwitchCase="0x0020" i18n="@@WFS_CDM_RA_ITEMCASSETTE">ITEMCASSETTE</span>
+</div>

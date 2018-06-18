@@ -2,6 +2,7 @@ export enum Outcome {
 
     SUCCESS,
     WARNING,
-    ERROR
+    ERROR,
+    NONE
     
 }

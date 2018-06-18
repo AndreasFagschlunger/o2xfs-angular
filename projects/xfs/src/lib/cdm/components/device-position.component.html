@@ -1,0 +1,6 @@
+<div ngSwitch="{{value}}" [cdmDevicePosition]="value">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_DEVICEINPOSITION">INPOSITION</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_DEVICENOTINPOSITION">NOTINPOSITION</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_DEVICEPOSUNKNOWN">POSUNKNOWN</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_DEVICEPOSNOTSUPP">POSNOTSUPP</span>
+</div>

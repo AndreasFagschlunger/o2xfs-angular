@@ -1,0 +1,16 @@
+<div ngSwitch="{{value}}" [cdmGuidLights]="value">
+    <span *ngSwitchCase="0x00000001" i18n="@@WFS_CDM_GUIDANCE_OFF">OFF</span>
+    <span *ngSwitchCase="0x00000004" i18n="@@WFS_CDM_GUIDANCE_SLOW_FLASH">SLOW_FLASH</span>
+    <span *ngSwitchCase="0x00000008" i18n="@@WFS_CDM_GUIDANCE_MEDIUM_FLASH">MEDIUM_FLASH</span>
+    <span *ngSwitchCase="0x00000010" i18n="@@WFS_CDM_GUIDANCE_QUICK_FLASH">QUICK_FLASH</span>
+    <span *ngSwitchCase="0x00000080" i18n="@@WFS_CDM_GUIDANCE_CONTINUOUS">CONTINUOUS</span>
+    <span *ngSwitchCase="0x00000100" i18n="@@WFS_CDM_GUIDANCE_RED">RED</span>
+    <span *ngSwitchCase="0x00000200" i18n="@@WFS_CDM_GUIDANCE_GREEN">GREEN</span>
+    <span *ngSwitchCase="0x00000400" i18n="@@WFS_CDM_GUIDANCE_YELLOW">YELLOW</span>
+    <span *ngSwitchCase="0x00000800" i18n="@@WFS_CDM_GUIDANCE_BLUE">BLUE</span>
+    <span *ngSwitchCase="0x00001000" i18n="@@WFS_CDM_GUIDANCE_CYAN">CYAN</span>
+    <span *ngSwitchCase="0x00002000" i18n="@@WFS_CDM_GUIDANCE_MAGENTA">MAGENTA</span>
+    <span *ngSwitchCase="0x00004000" i18n="@@WFS_CDM_GUIDANCE_WHITE">WHITE</span>
+    <span *ngSwitchCase="0x0000" i18n="@@WFS_CDM_GUIDANCE_NOT_AVAILABLE">NOT_AVAILABLE</span>
+    <span *ngSwitchCase="0x00200000" i18n="@@WFS_CDM_GUIDANCE_EXIT">EXIT</span>
+</div>

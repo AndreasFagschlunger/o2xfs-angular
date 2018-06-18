@@ -1,0 +1,12 @@
+<div ngSwitch="{{value}}" [cdmCashUnitStatus]="value">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_STATCUOK">OK</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_STATCUFULL">FULL</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_STATCUHIGH">HIGH</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_STATCULOW">LOW</span>
+    <span *ngSwitchCase="4" i18n="@@WFS_CDM_STATCUEMPTY">EMPTY</span>
+    <span *ngSwitchCase="5" i18n="@@WFS_CDM_STATCUINOP">INOP</span>
+    <span *ngSwitchCase="6" i18n="@@WFS_CDM_STATCUMISSING">MISSING</span>
+    <span *ngSwitchCase="7" i18n="@@WFS_CDM_STATCUNOVAL">NOVAL</span>
+    <span *ngSwitchCase="8" i18n="@@WFS_CDM_STATCUNOREF">NOREF</span>
+    <span *ngSwitchCase="9" i18n="@@WFS_CDM_STATCUMANIP">MANIP</span>
+</div>

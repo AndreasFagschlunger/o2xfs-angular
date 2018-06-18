@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { PresentState } from '../present-state.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmPresentState]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmPresentStateDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmPresentState')
+  value: PresentState;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,9 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
-        result = Outcome.SUCCESS;
-        break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case PresentState.PRESENTED:
+      case PresentState.NOTPRESENTED:
+      case PresentState.UNKNOWN:
       default:
         result = Outcome.ERROR;
         break;

@@ -1,15 +1,15 @@
 import { Directive, Input, ElementRef } from '@angular/core';
-import { Dispenser } from '../dispenser.enum';
+import { InputPosition } from '../input-position.enum';
 import { AbstractOutcomeDirective } from '../../directives/abstract-outcome.directive';
 import { Outcome } from '../../directives/outcome.enum';
 
 @Directive({
-  selector: '[cdmDispenser]'
+  selector: '[cdmInputPosition]'
 })
-export class CdmDispenserDirective extends AbstractOutcomeDirective {
+export class CdmInputPositionDirective extends AbstractOutcomeDirective {
 
-  @Input('cdmDispenser')
-  value: Dispenser;
+  @Input('cdmInputPosition')
+  value: InputPosition;
 
   constructor(el: ElementRef) {
     super(el);
@@ -18,14 +18,13 @@ export class CdmDispenserDirective extends AbstractOutcomeDirective {
   getOutcome(): Outcome {
     let result: Outcome;
     switch (this.value) {
-      case Dispenser.OK:
-        result = Outcome.SUCCESS;
-        break;
-      case Dispenser.CUSTATE:
-        result = Outcome.WARNING;
-        break;
-      case Dispenser.CUSTOP:
-      case Dispenser.CUUNKNOWN:
+      case InputPosition.LEFT:
+      case InputPosition.RIGHT:
+      case InputPosition.CENTER:
+      case InputPosition.TOP:
+      case InputPosition.BOTTOM:
+      case InputPosition.FRONT:
+      case InputPosition.REAR:
       default:
         result = Outcome.ERROR;
         break;
