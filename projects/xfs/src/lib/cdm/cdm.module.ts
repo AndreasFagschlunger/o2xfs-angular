@@ -17,6 +17,7 @@ import { CdmFailureComponent } from './components/failure.component';
 import { CdmFailureDirective } from './directives/failure.directive';
 import { CdmGuidLightsComponent } from './components/guid-lights.component';
 import { CdmGuidLightsDirective } from './directives/guid-lights.directive';
+import { CdmGuidPositionComponent } from './components/guid-position.component';
 import { CdmIncompleteRetractReasonComponent } from './components/incomplete-retract-reason.component';
 import { CdmInputPositionComponent } from './components/input-position.component';
 import { CdmInputPositionDirective } from './directives/input-position.directive';
@@ -80,6 +81,7 @@ import { CdmTypeComponent } from './components/type.component';
     CdmFailureDirective,
     CdmGuidLightsComponent,
     CdmGuidLightsDirective,
+    CdmGuidPositionComponent,
     CdmIncompleteRetractReasonComponent,
     CdmInputPositionComponent,
     CdmInputPositionDirective,
@@ -139,6 +141,7 @@ import { CdmTypeComponent } from './components/type.component';
     CdmFailureDirective,
     CdmGuidLightsComponent,
     CdmGuidLightsDirective,
+    CdmGuidPositionComponent,
     CdmIncompleteRetractReasonComponent,
     CdmInputPositionComponent,
     CdmInputPositionDirective,

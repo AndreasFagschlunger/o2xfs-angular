@@ -8,6 +8,6 @@ import { CdmGuidLights } from '../cdm-guid-lights.enum';
 export class CdmGuidLightsComponent {
 
   @Input()
-  value: CdmGuidLights;
+  values: CdmGuidLights[];
 
 }

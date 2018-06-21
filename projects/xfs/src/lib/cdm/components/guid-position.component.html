@@ -1,0 +1,11 @@
+<div ngSwitch="{{value}}">
+    <span *ngSwitchCase="0" i18n="@@WFS_CDM_GUIDANCE_POSOUTNULL">NULL</span>
+    <span *ngSwitchCase="1" i18n="@@WFS_CDM_GUIDANCE_POSOUTLEFT">LEFT</span>
+    <span *ngSwitchCase="2" i18n="@@WFS_CDM_GUIDANCE_POSOUTRIGHT">RIGHT</span>
+    <span *ngSwitchCase="3" i18n="@@WFS_CDM_GUIDANCE_POSOUTCENTER">CENTER</span>
+    <span *ngSwitchCase="4" i18n="@@WFS_CDM_GUIDANCE_POSOUTTOP">TOP</span>
+    <span *ngSwitchCase="5" i18n="@@WFS_CDM_GUIDANCE_POSOUTBOTTOM">BOTTOM</span>
+    <span *ngSwitchCase="6" i18n="@@WFS_CDM_GUIDANCE_POSOUTFRONT">FRONT</span>
+    <span *ngSwitchCase="7" i18n="@@WFS_CDM_GUIDANCE_POSOUTREAR">REAR</span>
+    <span *ngSwitchDefault>{{value}}</span>
+</div>

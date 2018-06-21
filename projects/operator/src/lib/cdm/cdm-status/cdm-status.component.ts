@@ -34,14 +34,45 @@ export class CdmStatusComponent implements OnInit {
         'Key 2': 'Value 2'
       },
       guidLights: [
-        [ CdmGuidLights.MEDIUM_FLASH, CdmGuidLights.GREEN ]
+        [],
+        [],
+        [CdmGuidLights.BLUE, CdmGuidLights.QUICK_FLASH],
+        [CdmGuidLights.MEDIUM_FLASH, CdmGuidLights.GREEN],
+        [CdmGuidLights.RED, CdmGuidLights.SLOW_FLASH],
+        [CdmGuidLights.MAGENTA, CdmGuidLights.CONTINUOUS],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        []
       ],
       devicePosition: DevicePosition.INPOSITION,
       powerSaveRecoveryTime: 2000,
       antiFraudModule: AntiFraudModule.OK
     };
     window.setInterval(() => {
-      if(this.status.deviceState === CdmDeviceState.ONLINE) {
+      if (this.status.deviceState === CdmDeviceState.ONLINE) {
         this.status.deviceState = CdmDeviceState.OFFLINE;
       } else {
         this.status.deviceState = CdmDeviceState.ONLINE;
