@@ -28,7 +28,7 @@ export class CdmGuidLightsDirective implements OnChanges, OnInit {
 
   private intervalID: number = 0;
   private delay: number = 0;
-  private backgroundColor: string = '';
+  private className: string = '';
 
   constructor(private el: ElementRef) { }
 
@@ -41,47 +41,41 @@ export class CdmGuidLightsDirective implements OnChanges, OnInit {
   }
 
   private update(): void {
-    for(let each of this.values) {
-      console.log('update(): each=' + each)
-      if(CdmGuidLights.OFF === each) {
+    for (let each of this.values) {
+      if (CdmGuidLights.OFF === each) {
         this.turnOff();
-      } else if(colorsMap.has(each)) {
-        this.backgroundColor = colorsMap.get(each)!;
-        this.setColor();
-      } else if(intervalMap.has(each) && this.delay !== intervalMap.get(each)) {
-        console.log('this.intervalID=' + this.intervalID + ',delay' + this.delay + ',' + intervalMap.get(each));
+      } else if (colorsMap.has(each) && this.className !== colorsMap.get(each)) {
+        if (this.className.length > 0) {
+          this.el.nativeElement.classList.remove(this.className);
+        }
+        this.className = colorsMap.get(each)!;
+        this.setClass();
+      } else if (intervalMap.has(each) && this.delay !== intervalMap.get(each)) {
         window.clearInterval(this.intervalID);
         this.delay = intervalMap.get(each)!;
-        if(CdmGuidLights.CONTINUOUS === each) {
-          this.setColor();
+        if (CdmGuidLights.CONTINUOUS === each) {
+          this.setClass();
         } else {
-          this.intervalID = window.setInterval(() => this.toggleColor(), this.delay);
+          this.intervalID = window.setInterval(() => this.toggleClass(), this.delay);
         }
-      } else {
-        console.log('WARN: ' + each + ',' + intervalMap.has(each) + ',this.delay=' + this.delay + ',in=' + intervalMap.get(each));
       }
     }
   }
 
-  private toggleColor(): void {
-    console.log('toggleColor: backgroundColor=' + this.backgroundColor + ',' + this.el.nativeElement.style.backgroundColor);
-    if(this.backgroundColor === this.el.nativeElement.style.backgroundColor) {
-      this.el.nativeElement.style.backgroundColor = '';
-    } else {
-      this.setColor();
-    }
+  private toggleClass(): void {
+    this.el.nativeElement.classList.toggle(this.className);
   }
 
-  private setColor(): void {
-    this.el.nativeElement.style.backgroundColor = this.backgroundColor;
+  private setClass(): void {
+    this.el.nativeElement.classList.add(this.className);
   }
 
   private turnOff(): void {
-    this.backgroundColor = '';
-    this.setColor();
-    if(this.intervalID) {
+    if (this.intervalID) {
       window.clearInterval(this.intervalID);
     }
+    this.el.nativeElement.classList.remove(this.className);
+    this.className = '';
   }
 }
 

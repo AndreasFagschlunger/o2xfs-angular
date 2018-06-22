@@ -9,26 +9,24 @@
     z-index: $zindex-fixed;
 }
 
-.flex-container {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    position: absolute;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.xfs-error {    
+.red {
     background-color: $danger;
 }
-
-.xfs-warning {
-    background-color: $warning;
+.green {    
+    background-color: $green;
 }
-
-.xfs-success {
-    color: #155724;
-    background-color: $success;
+.yellow {    
+    background-color: $yellow;
+}
+.blue {    
+    background-color: $blue;
+}
+.cyan {    
+    background-color: $cyan;
+}
+.magenta {    
+    background-color: lighten(magenta, 25%);
+}
+.white {    
+    background-color: $white;
 }

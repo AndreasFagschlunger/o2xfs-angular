@@ -5,8 +5,7 @@ import { AntiFraudModule, DevicePosition, CdmGuidLights, Position, Shutter, Posi
 
 @Component({
   selector: 'lib-cdm-status',
-  templateUrl: './cdm-status.component.html',
-  styleUrls: ['./cdm-status.component.scss']
+  templateUrl: './cdm-status.component.html'
 })
 export class CdmStatusComponent implements OnInit {
 

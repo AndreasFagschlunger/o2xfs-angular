@@ -1,55 +1,92 @@
 <div class="container">
     <div>
-        <h1>Dispenser status</h1>
-        <div>
-            <table>
+        <h1 class="row justify-content-center">Dispenser status</h1>
+        <div class="row justify-content-center">
+            <table class="table">
                 <tr>
                     <td>Device</td>
                     <td>&nbsp;</td>
-                    <td><cdmDeviceState [value]="status.deviceState"></cdmDeviceState></td>
+                    <td>
+                        <cdmDeviceState [value]="status.deviceState"></cdmDeviceState>
+                    </td>
+                </tr>
+                <tr>
+                    <td>DevicePosition</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <cdmDevicePosition [value]="status.devicePosition"></cdmDevicePosition>
+                    </td>
+                </tr>
+                <tr>
+                    <td>AntiFraudModule</td>
+                    <td>&nbsp;</td>
+                    <td>
+                        <cdmAntiFraudModule [value]="status.antiFraudModule"></cdmAntiFraudModule>
+                    </td>
                 </tr>
                 <tr>
                     <td>Safe door</td>
                     <td>&nbsp;</td>
-                    <td><cdmSafeDoor [value]="status.safeDoor"></cdmSafeDoor></td>
+                    <td>
+                        <cdmSafeDoor [value]="status.safeDoor"></cdmSafeDoor>
+                    </td>
                 </tr>
                 <tr>
                     <td>Cash units</td>
                     <td>&nbsp;</td>
-                    <td><cdmDispenser [value]="status.dispenser"></cdmDispenser></td>
+                    <td>
+                        <cdmDispenser [value]="status.dispenser"></cdmDispenser>
+                    </td>
                 </tr>
                 <tr>
                     <td>Intermediate Stacker</td>
                     <td>&nbsp;</td>
-                    <td><cdmIntermediateStacker [value]="status.intermediateStacker"></cdmIntermediateStacker></td>
+                    <td>
+                        <cdmIntermediateStacker [value]="status.intermediateStacker"></cdmIntermediateStacker>
+                    </td>
                 </tr>
                 <ng-container *ngFor="let each of status.positions">
                     <tr>
                         <td>Position</td>
-                        <td><cdmPosition [value]="each.position"></cdmPosition></td>
+                        <td>
+                            <cdmPosition [value]="each.position"></cdmPosition>
+                        </td>
                         <td>&nbsp;</td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
                         <td>Shutter</td>
-                        <td><cdmShutter [value]="each.shutter"></cdmShutter></td>
+                        <td>
+                            <cdmShutter [value]="each.shutter"></cdmShutter>
+                        </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
                         <td>PositionStatus</td>
-                        <td><cdmPositionStatus [value]="each.positionStatus"></cdmPositionStatus></td>
+                        <td>
+                            <cdmPositionStatus [value]="each.positionStatus"></cdmPositionStatus>
+                        </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
                         <td>Transport</td>
-                        <td><cdmTransport [value]="each.transport"></cdmTransport></td>
+                        <td>
+                            <cdmTransport [value]="each.transport"></cdmTransport>
+                        </td>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
                         <td>TransportStatus</td>
-                        <td><cdmTransportStatus [value]="each.transportStatus"></cdmTransportStatus></td>
-                    </tr>                    
+                        <td>
+                            <cdmTransportStatus [value]="each.transportStatus"></cdmTransportStatus>
+                        </td>
+                    </tr>
                 </ng-container>
+                <tr>
+                    <td>PowerSaveRecoveryTime</td>
+                    <td>&nbsp;</td>
+                    <td>{{status.powerSaveRecoveryTime}}</td>
+                </tr>
                 <tr>
                     <td>Extra</td>
                     <td>&nbsp;</td>
@@ -66,25 +103,14 @@
                 <ng-container *ngFor="let each of status.guidLights; let i = index">
                     <tr *ngIf="each.length > 0">
                         <td>&nbsp;</td>
-                        <td><cdmGuidPosition [value]="i"></cdmGuidPosition></td>
-                        <td><cdmGuidLights [values]="each"></cdmGuidLights></td>
+                        <td>
+                            <cdmGuidPosition [value]="i"></cdmGuidPosition>
+                        </td>
+                        <td>
+                            <cdmGuidLights [values]="each"></cdmGuidLights>
+                        </td>
                     </tr>
                 </ng-container>
-                <tr>
-                    <td>DevicePosition</td>
-                    <td>&nbsp;</td>
-                    <td><cdmDevicePosition [value]="status.devicePosition"></cdmDevicePosition></td>
-                </tr>
-                <tr>
-                    <td>PowerSaveRecoveryTime</td>
-                    <td>&nbsp;</td>
-                    <td>{{status.powerSaveRecoveryTime}}</td>
-                </tr>
-                <tr>
-                    <td>AntiFraudModule</td>
-                    <td>&nbsp;</td>
-                    <td><cdmAntiFraudModule [value]="status.antiFraudModule"></cdmAntiFraudModule></td>
-                </tr>
             </table>
         </div>
     </div>
