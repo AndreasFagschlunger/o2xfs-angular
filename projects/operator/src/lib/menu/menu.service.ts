@@ -23,13 +23,13 @@ export class MenuService {
     }
 
     getUpButton(): MenuButton {
-        let result = this.getButton(0);
+        let result = this.getButton(5);
         result.text = 'Up';
         return result;
     }
 
     getDownButton(): MenuButton {
-        let result = this.getButton(1);
+        let result = this.getButton(6);
         result.text = 'Down';
         return result;
     }

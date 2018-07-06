@@ -19,4 +19,10 @@ export class MenuButtonComponent implements OnInit {
   ngOnInit() {
     this.button = this.menuService.getButton(this.index);
   }
+
+  onAction(): void {
+    if(this.button.onAction) {
+      this.button.onAction();
+    }    
+  }
 }

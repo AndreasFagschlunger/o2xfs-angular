@@ -1,6 +1,6 @@
 export class MenuButton {
 
-    disable: boolean = false;
+    disabled: boolean = false;
     onAction?: () => void;
     text: string;
     visible: boolean = false;
