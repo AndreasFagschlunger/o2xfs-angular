@@ -1,20 +1,7 @@
 .box {
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-.box div {
-    border: 1px solid black;
-}
-
-.one {
-    flex: 1 0 auto;
-}
-
-.two {
-    flex: 2 0 auto;
-}
-
-.three {
-    flex: 1 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
