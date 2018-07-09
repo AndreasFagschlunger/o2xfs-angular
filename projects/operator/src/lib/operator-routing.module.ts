@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { OperatorComponent } from './operator.component';
 import { CdmModule } from './cdm/cdm.module';
+import { AuthGuard } from './auth-guard.service';
 
 export function loadCdmModule() {
     return CdmModule;

@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CdmListComponent } from './cdm-list/cdm-list.component';
 import { CdmStatusComponent } from './cdm-status/cdm-status.component';
-import { AuthGuard } from '../auth-guard.service';
 
 const routes: Routes = [
   {
