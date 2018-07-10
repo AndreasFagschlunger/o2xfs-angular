@@ -13,6 +13,7 @@ const routes: Routes = [
     {
         path: '',
         component: OperatorComponent,
+        canActivate: [AuthGuard],
         children: [
             { path: 'cdm', loadChildren: loadCdmModule },
             { path: 'login', component: LoginComponent },
