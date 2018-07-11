@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { OperatorComponent } from './operator.component';
 import { LoginComponent } from './login/login.component';
 import { OperatorRoutingModule } from './operator-routing.module';
-import { MenuModule } from './menu/menu.module';
-import { MenuService } from './menu/menu.service';
+import { MainMenuComponent } from './main-menu/main-menu.component';
+import { UiModule } from './ui/ui.module';
 
 @NgModule({
   imports: [
     OperatorRoutingModule,
-    MenuModule
+    UiModule
   ],
-  declarations: [OperatorComponent, LoginComponent],
+  declarations: [OperatorComponent, LoginComponent, MainMenuComponent],
   exports: [OperatorComponent],
   providers: []
 })

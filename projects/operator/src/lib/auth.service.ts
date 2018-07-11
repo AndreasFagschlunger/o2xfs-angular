@@ -8,6 +8,8 @@ export class AuthService {
 
   isLoggedIn = false;
 
+  redirectUrl: string;
+
   constructor() { }
 
   login(): Observable<boolean> {

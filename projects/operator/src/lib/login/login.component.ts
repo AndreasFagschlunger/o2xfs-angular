@@ -3,20 +3,17 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 
 @Component({
-  selector: 'lib-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
-
   login(): void {
     this.authService.login().subscribe(() => {
-      this.router.navigate(['operator/cdm/status']);
+      let redirect = '/operator/login' === this.authService.redirectUrl ? '/operator' : this.authService.redirectUrl;
+      this.router.navigate([redirect]);
     });
   }
 }

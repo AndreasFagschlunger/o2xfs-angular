@@ -4,6 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { OperatorComponent } from './operator.component';
 import { CdmModule } from './cdm/cdm.module';
 import { AuthGuard } from './auth-guard.service';
+import { MainMenuComponent } from "./main-menu/main-menu.component";
 
 export function loadCdmModule() {
     return CdmModule;
@@ -17,6 +18,7 @@ const routes: Routes = [
         children: [
             { path: 'cdm', loadChildren: loadCdmModule },
             { path: 'login', component: LoginComponent },
+            { path: '', component: MainMenuComponent, pathMatch: 'full' },
             { path: '**', redirectTo: 'login' }
         ]
     }

@@ -12,7 +12,8 @@ export class AuthGuard implements CanActivate, CanActivateChild {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     console.log('canActivate: route=' + route + ',state=' + state);
     let result: boolean = true;
-    if(!this.authService.isLoggedIn && '/operator/login' !== state.url) {
+    this.authService.redirectUrl = state.url;
+    if(!this.authService.isLoggedIn && '/operator/login' !== state.url) {      
       this.router.navigate(['/operator/login']);
       result = false;
     }
