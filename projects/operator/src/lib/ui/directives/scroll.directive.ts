@@ -28,14 +28,13 @@ export class ScrollDirective implements AfterContentInit {
 
   private enable(): void {    
     this.unitIncrement = Math.round(window.innerHeight * 0.3);
-    this.max = window.innerHeight - this.el.nativeElement.offsetHeight;
-    this.upButton.onAction = () => this.scrollUp();
-    this.downButton.onAction = () => this.scrollDown();
+    this.max = window.innerHeight - this.el.nativeElement.offsetHeight;    
     this.upButton.visible = true;
+    this.upButton.disabled = true;
+    this.upButton.onAction = () => this.scrollUp();
     this.downButton.visible = true;
-    if(this.value == 0) {
-      this.upButton.disabled = true;
-    }
+    this.downButton.disabled = false;
+    this.downButton.onAction = () => this.scrollDown();
   }
 
   private disable(): void {
