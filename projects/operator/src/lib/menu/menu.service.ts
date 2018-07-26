@@ -52,4 +52,13 @@ export class MenuService {
         result.text = 'Down';
         return result;
     }
+
+    reset(): void {
+        for(let each of this.buttons) {
+            each.disabled = true;
+            each.onAction = undefined;
+            each.text = '';
+            each.visible = false;
+        }
+    }
 }

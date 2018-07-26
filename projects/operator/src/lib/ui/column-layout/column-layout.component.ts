@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { MainMenuService } from '../../main-menu/main-menu.service';
 
 @Component({
   selector: 'o2-column-layout',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ColumnLayoutComponent implements OnInit {
 
-  constructor() { }
+  @Input() backButton: boolean = false;
+
+  constructor(private mainMenu: MainMenuService) { }
 
   ngOnInit() {
+    if(this.backButton) {
+      this.mainMenu.showBackButton();
+    }
   }
-
 }
