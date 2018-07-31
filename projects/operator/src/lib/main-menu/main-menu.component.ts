@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { MainMenuService } from './main-menu.service';
+import { MenuService } from '../menu/menu.service';
 
 @Component({
     templateUrl: './main-menu.component.html',
@@ -11,6 +12,6 @@ export class MainMenuComponent implements OnInit {
     constructor(private mainMenu: MainMenuService) { }
 
     ngOnInit(): void {
-        this.mainMenu.refresh();
+        this.mainMenu.show();
     }
 }
