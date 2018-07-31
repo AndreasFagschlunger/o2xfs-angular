@@ -10,8 +10,9 @@ export class CdmGuard implements CanActivateChild {
     constructor(private menuService: MainMenuService, private xfsService: XfsService, private router: Router) { }
 
     canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        let logicalName = childRoute.paramMap.get('logicalName');
-        let result: boolean = logicalName != null || state.url === '/operator/cdm/select';
+        let logicalName = childRoute.queryParams['logicalName'];
+        let result: boolean = logicalName != null || state.url === '/operator/cdm/select';        
+        console.log('result=' + result + ',logicalName=' + logicalName + ',state.url=' + state.url);
         if (!result) {
             let cashDispensers = this.xfsService.getLogicalServices().filter(e => ServiceClass.CDM === e.serviceClass);
             if (cashDispensers.length == 1) {

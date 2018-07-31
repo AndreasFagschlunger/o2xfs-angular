@@ -1,25 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LogicalService, ServiceClass, XfsService } from 'xfs';
-import { MenuItem, MenuService } from '../../menu/menu';
+import { MainMenuService } from '../../main-menu/main-menu.service';
+import { MenuItem } from '../../menu/menu-item.model';
+import { MenuService } from '../../menu/menu.service';
 
 @Component({
   selector: 'cdm-list',
-  templateUrl: './cdm-list.component.html',
-  styleUrls: ['./cdm-list.component.scss']
+  templateUrl: './cdm-list.component.html'
 })
 export class CdmListComponent implements OnInit {
 
   cashDispensers: LogicalService[];
 
-  constructor(private menuService: MenuService, private router: Router, private xfsService: XfsService) { }
+  constructor(private mainMenu: MainMenuService, private menuService: MenuService, private router: Router, private xfsService: XfsService) { }
 
   ngOnInit() {
     this.cashDispensers = this.xfsService.getLogicalServices().filter(e => ServiceClass.CDM === e.serviceClass);
     let items: MenuItem[] = [];
-    for(let each of this.cashDispensers) {
-      items.push({ items: [], label: each.name, onAction: () => this.router.navigate(['']) });
+    for (let each of this.cashDispensers) {
+      items.push({ items: [], label: each.name, onAction: () => this.select(each.name) });
     }
     this.menuService.setItems(items);
+  }
+
+  private select(logicalName: string): void {
+    this.menuService.reset();
+    this.router.navigate([this.mainMenu.redirectUrl], { queryParams: { logicalName: logicalName } });
   }
 }

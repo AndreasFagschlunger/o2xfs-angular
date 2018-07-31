@@ -12,6 +12,7 @@ export class MainMenuService {
     private items: MenuItem[];
     private selection: number[] = new Array();
     private page: number = 0;
+    redirectUrl: string;
 
     constructor(private menuService: MenuService, private router: Router) {
         this.items = [

@@ -90,7 +90,10 @@ export class MenuService {
 
     private back(): void {
         this.page = 0;
-        this.selection.pop();        
+        this.selection.pop();
+        if(this.selection.length == 0) {
+            this.backAction = undefined;
+        }
         this.refresh();
     }
 
