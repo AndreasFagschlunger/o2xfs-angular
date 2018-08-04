@@ -1,0 +1,15 @@
+export enum CdmInfoCommand {
+
+    STATUS = 301,
+    CAPABILITIES = 302,
+    CASH_UNIT_INFO = 303,
+    TELLER_INFO = 304,
+    CURRENCY_EXP = 306,
+    MIX_TYPES = 307,
+    MIX_TABLE = 308,
+    PRESENT_STATUS = 309,
+    GET_ITEM_INFO = 310,
+    GET_BLACKLIST = 311,
+    GET_ALL_ITEMS_INFO = 312,
+
+}

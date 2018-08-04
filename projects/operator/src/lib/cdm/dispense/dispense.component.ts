@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { CdmInfoCommand, XfsService } from 'xfs';
+import { filter } from 'rxjs/operators';
+import { XfsMessage } from 'dist/xfs/lib/xfs-message.enum';
+import { CashUnitInfo3 } from 'xfs3';
 
 @Component({
   selector: 'cdm-dispense',
@@ -7,9 +11,12 @@ import { Router } from '@angular/router';
 })
 export class DispenseComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  cashUnitInfo: CashUnitInfo3;
+
+  constructor(private route: ActivatedRoute, private xfsService: XfsService) { }
 
   ngOnInit() {
+    const logicalName = this.route.snapshot.paramMap.get('logicalName');
+    this.xfsService.getInfo<CashUnitInfo3>(logicalName!, CdmInfoCommand.CASH_UNIT_INFO).subscribe(cashUnitInfo => this.cashUnitInfo = cashUnitInfo);
   }
-
 }

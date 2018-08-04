@@ -7,6 +7,7 @@ export {CdmDeviceState} from './cdm-device-state.enum';
 export {CdmExecuteCommand} from './cdm-execute-command.enum';
 export {CdmGuidLights} from './cdm-guid-lights.enum';
 export {CdmType} from './cdm-type.enum';
+export {CdmInfoCommand} from './cdm-info-command.enum';
 export {DevicePosition} from './device-position.enum';
 export {Dispenser} from './dispenser.enum';
 export {ExchangeType} from './exchange-type.enum';
