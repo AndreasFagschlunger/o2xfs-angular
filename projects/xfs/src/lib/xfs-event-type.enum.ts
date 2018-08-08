@@ -1,5 +1,7 @@
 export enum XfsEventType {
 
-    Initiated
+    Initiated,
+    Intermediate,
+    Complete
 
 }

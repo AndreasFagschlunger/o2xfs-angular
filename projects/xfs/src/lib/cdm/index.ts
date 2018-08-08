@@ -1,5 +1,3 @@
-import { XfsCdmModule } from './cdm.module';
-
 export {AntiFraudModule} from './anti-fraud-module.enum';
 export {CashUnitStatus} from './cash-unit-status.enum';
 export {CashUnitType} from './cash-unit-type.enum';

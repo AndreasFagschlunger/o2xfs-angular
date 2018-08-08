@@ -1,6 +1,6 @@
 import { LogicalService } from "./logical-service.model";
 
-export class XfsDevice {
+export class XfsService {
 
     logicalService: LogicalService;
 

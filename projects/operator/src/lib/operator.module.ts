@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+
 import { OperatorComponent } from './operator.component';
 import { LoginComponent } from './login/login.component';
 import { OperatorRoutingModule } from './operator-routing.module';

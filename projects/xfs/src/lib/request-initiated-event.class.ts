@@ -1,6 +1,6 @@
 import { XfsEventType } from './xfs-event-type.enum';
 
-export interface RequestInitiated {
+export interface RequestInitiatedEvent {
 
     type: XfsEventType.Initiated;
     requestId: number;
